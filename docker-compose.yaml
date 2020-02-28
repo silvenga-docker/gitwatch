@@ -1,0 +1,8 @@
+version: '2.1'
+services:
+  gitwatch:
+    image: docker.pkg.github.com/silvenga-docker/gitwatch/gitwatch:latest
+    volumes:
+      - ./test:/test
+    restart: unless-stopped
+    command: /test
