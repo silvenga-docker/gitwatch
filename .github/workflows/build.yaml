@@ -1,0 +1,14 @@
+name: "Build"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  schedule:
+    # Random time each week.
+    - cron:  '45 5 * * 3'
+
+jobs:
+  build:
+    uses: silvenga-docker/building/.github/workflows/publish-github.yaml@master
+    secrets: inherit
